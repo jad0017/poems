@@ -1,12 +1,17 @@
 texfile ?= baristas.tex
-pdffile := $(texfile:.tex=.pdf)
+pdffile := $(notdir $(texfile:.tex=.pdf))
+psfile  := $(notdir $(texfile:.tex=.ps))
 
 all: pdf
+
+.PHONY: ps
+ps: pdf
+	@pdf2ps pdf/$(pdffile) >pdf/$(psfile)
 
 .PHONY: pdf
 pdf:
 	@pdflatex $(texfile)
-	@mv $(pdffile) pdf/$(notdir $(pdffile))
+	@mv $(pdffile) pdf/$(pdffile)
 	@$(MAKE) clean
 
 .PHONY: clean
