@@ -17,7 +17,7 @@ for my $file ( @ARGV ) {
 		my @a = split(/\s+/, $line);
 
 		for my $w ( @a ) {
-			$uniq{ $w }++;
+			$uniq{ lc $w }++;
 			push @words, $w;
 		}
 	}
