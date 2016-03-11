@@ -30,10 +30,15 @@ printf qq(Unique Words: %d\n), scalar( keys %uniq );
 print qq(\n);
 
 my @words_shuffled = shuffle @words;
+my @uniq_shuffled = shuffle keys %uniq;
 
 for my $i ( 0 .. 9 ) {
 	my $shift = $i * 4;
 	printf qq(%d: %s\n), $i,
 		join(' ', @words_shuffled[ (0 + $shift) .. (3 + $shift) ]);
 }
-
+for my $i ( 0 .. 9 ) {
+	my $shift = $i * 4;
+	printf qq(%d: %s\n), $i,
+		join(' ', @uniq_shuffled[ (0 + $shift) .. (3 + $shift) ]);
+}
