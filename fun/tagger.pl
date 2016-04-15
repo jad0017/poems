@@ -71,6 +71,7 @@ my %penn_treebank_tags = (
 'WRB' => 'WH_ADVERB', # how however whenever where whereby ...
 );
 
+
 sub sep(){ print(q(-) x 79, qq(\n)); }
 sub Sep(){ print(q(=) x 79, qq(\n)); }
 
@@ -91,6 +92,114 @@ print qq(Nouns:\n);
 Sep;
 $i = 0;
 my %word_list = $parser->get_words($text);
+for my $k ( keys %word_list ) {
+	my $v = $word_list{ $k };
+	print qq($i: $k    $v\n);
+	sep;
+	$i++;
+}
+
+sub get_exp {
+	my ($tag) = @_;
+	return unless defined $tag;
+	return qr|<$tag>[^<]+</$tag>\s*|;
+}
+
+my $NUM   = get_exp('cd');
+my $GER   = get_exp('vbg');
+my $ADJ   = get_exp('jj[rs]*');
+my $PART  = get_exp('vbn');
+my $NN    = get_exp('nn[sp]*');
+my $NNP   = get_exp('nnp');
+my $PREP  = get_exp('in');
+my $DET   = get_exp('det');
+my $PAREN = get_exp('[lr]rb');
+my $QUOT  = get_exp('ppr');
+my $SEN   = get_exp('pp');
+my $AUX   = get_exp('md');
+my $ADV   = get_exp('w?rb[rs]*');
+my $VERB  = get_exp('vb[hdnpz]*');
+my $WORD  = get_exp('\p{IsWord}+');
+
+sub get_verbs {
+	my ($parser, $text, $max) = @_;
+	$max = 5 unless defined $max;
+
+	my $MVP = qr/
+		(?:$VERB|$ADV)+      # One or more verb and adverb
+		(?:$GER|$ADJ|$PART)* # Followed by one or more gerund, adj, or part.
+		(?:
+		    (?:$PREP)*(?:$DET)?(?:$NUM)?(?:$ADV)?  # ??
+			(?:$GER|$ADJ|$PART|$ADV)*  # WAT?
+			(?:$VERB)+  # WATTTTT???
+		)*
+	/xo;
+	#my $MVP = qr/(?:$AUX|$ADV|$VERB)*(?:$VERB)/o;
+
+	my $tagged = $parser->add_tags($text);
+
+	my $found;
+	my $phrase_ext = qr/(?:$AUX|$ADV|$DET|$PREP|$ADJ|$NUM|$NN|$VERB)+/xo;
+
+	my @mn_phrases = map {
+		$found->{ $_ }++ if m/$phrase_ext/;
+		split /$phrase_ext/;
+	} ( $tagged =~ /($MVP)/gs );
+
+	for (@mn_phrases) {
+		my @words = split;
+
+		for (0 .. $#words) {
+			$found->{ join(" ", @words) }++ if (scalar(@words) > 1);
+			my $w = shift @words;
+			$found->{ $w }++ if ( $w =~ /$VERB/ );
+		}
+	}
+
+	my %ret;
+
+	for ( keys %{ $found } ) {
+		my $k = $parser->_strip_tags($_);
+		my $v = $found->{ $_ };
+
+		my @space_count = $k =~ /\s+/go;
+		my $word_count = scalar(@space_count) + 1;
+
+		next if $word_count > $max;
+
+		$k = $parser->stem($k) unless $word_count > 1;
+		my $multiplier = 1;
+		$multiplier = $word_count if $max;
+		$ret{ $k } += ( $multiplier * $v );
+	}
+
+	return %ret;
+}
+
+sub get_verbs2 {
+	my ($parser, $text, $max) = @_;
+	$max = 5 unless defined $max;
+
+	my $tagged = $parser->add_tags($text);
+
+	my %r;
+
+	print "$text\n";
+	print "$VERB\n";
+
+	while ( my $m = ($tagged =~ m/($VERB)/g) ) {
+		my $t = $parser->_strip_tags($m);
+		$r{ $t } = 1;
+	}
+
+	return %r;
+}
+
+Sep;
+print qq(Verbs:\n);
+Sep;
+$i = 0;
+%word_list = get_verbs($parser, $text);
 for my $k ( keys %word_list ) {
 	my $v = $word_list{ $k };
 	print qq($i: $k    $v\n);
