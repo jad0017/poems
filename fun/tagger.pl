@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 use Lingua::EN::Tagger;
+use List::Util qw(shuffle);
 
 open(my $f, '<', $ARGV[0]) or die qq($!\n);
 my $text = '';
@@ -86,14 +87,15 @@ for my $s ( @{ $sentences } ) {
 	sep;
 	$i++;
 }
+undef $sentences;
 
 Sep;
 print qq(Nouns:\n);
 Sep;
 $i = 0;
-my %word_list = $parser->get_words($text);
-for my $k ( keys %word_list ) {
-	my $v = $word_list{ $k };
+my %noun_list = $parser->get_words($text);
+for my $k ( keys %noun_list ) {
+	my $v = $noun_list{ $k };
 	print qq($i: $k    $v\n);
 	sep;
 	$i++;
@@ -199,10 +201,81 @@ Sep;
 print qq(Verbs:\n);
 Sep;
 $i = 0;
-%word_list = get_verbs($parser, $text);
-for my $k ( keys %word_list ) {
-	my $v = $word_list{ $k };
+my %verb_list = get_verbs($parser, $text);
+for my $k ( keys %verb_list ) {
+	my $v = $verb_list{ $k };
 	print qq($i: $k    $v\n);
 	sep;
 	$i++;
+}
+undef $text;
+
+sub sort_hash {
+	sort {
+		my $c = $_[0]->{ $a } <=> $_[0]->{ $b };
+		return -($c) if $c;
+		-($a cmp $b);
+	} ( keys %{ $_[0] } );
+}
+
+my @nouns = sort_hash(\%noun_list);
+my @high_nouns;
+for my $x ( @nouns ) {
+	push(@high_nouns, $x) if $noun_list{ $x } > 1;
+}
+undef %noun_list;
+
+my @verbs = sort_hash(\%verb_list);
+my @high_verbs;
+
+for my $x ( @verbs ) {
+	push(@high_verbs, $x) if $verb_list{ $x } > 1;
+}
+undef %verb_list;
+
+Sep;
+print qq(Top Result:\n);
+Sep;
+my $n = $nouns[0];
+my $v = $verbs[0];
+my $n2 = $nouns[1];
+print qq($v (the) $n\n);
+print qq($n (the/that) $v $n2\n);
+sep;
+
+Sep;
+print qq(Other:\n);
+Sep;
+
+my @s_high_nouns;
+my @s_high_verbs;
+
+if ( @high_nouns ) {
+	@s_high_nouns = shuffle(@high_nouns);
+	undef @high_nouns;
+} else {
+	@s_high_nouns = shuffle(@nouns);
+}
+
+if ( @high_verbs ) {
+	@s_high_verbs = shuffle(@high_verbs);
+	undef @high_verbs;
+} else {
+	@s_high_verbs = shuffle(@verbs);
+}
+
+for my $x ( 0 .. 9 ) {
+	my $t = shift @s_high_nouns;
+	$t = shift @nouns unless ( defined $t );
+	$n = $t if defined $t;
+	$t = shift @s_high_verbs;
+	$t = shift @verbs unless ( defined $t );
+	$v = $t if defined $t;
+	$t = shift @s_high_nouns;
+	$t = shift @nouns unless ( defined $t );
+	$n2 = $t if defined $t;
+
+	print qq($x: $v (the) $n\n);
+	print qq($x: $n (the/that) $v $n2\n);
+	sep;
 }
