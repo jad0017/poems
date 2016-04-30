@@ -1,3 +1,4 @@
+#!/usr/bin/perl
 my %words;
 
 while (my $line = <>) {
