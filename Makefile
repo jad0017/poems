@@ -1,4 +1,8 @@
 texfile ?= baristas.tex
+name ?=
+ifneq ($(name),)
+override texfile := $(name)
+endif
 pdffile := $(notdir $(texfile:.tex=.pdf))
 psfile  := $(notdir $(texfile:.tex=.ps))
 txtfile := $(notdir $(texfile:.tex=.txt))
