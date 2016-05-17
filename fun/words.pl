@@ -15,6 +15,7 @@ for my $file ( @ARGV ) {
 
 	while ( my $line = <$fd> ) {
 		next if ( $line =~ m/^\s*#/o );
+		$line =~ s/[][.,;(){}?!:"]/ /go;
 		my @a = split(/\s+/, $line);
 
 		for my $w ( @a ) {
