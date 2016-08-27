@@ -11,12 +11,14 @@ all: pdf
 
 .PHONY: ps
 ps: pdf
+	@mkdir -p pdf/$(dir $(pdffile))
 	@pdf2ps pdf/$(pdffile) >pdf/$(psfile)
 
 .PHONY: pdf
 pdf:
 	@mkdir -p pdf
 	@pdflatex $(texfile)
+	@mkdir -p pdf/$(dir $(pdffile))
 	@mv $(pdffile) pdf/$(pdffile)
 	@$(MAKE) clean
 
