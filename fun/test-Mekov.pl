@@ -22,10 +22,10 @@ for my $x ( 0 .. 20 ) {
 	my @a = split /\s+/, $line;
 	next if ( scalar @a < 4 );
 	print '"', $m->genSentence(10), "\"\n";
-	exit;
+	#exit;
 }
 print '"', $m->genSentence(10), "\"\n";
-exit;
+#exit;
 
 my $x = 0;
 for $x ( 0 .. 20 ) {
