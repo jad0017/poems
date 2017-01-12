@@ -1,0 +1,354 @@
+\documentclass{article}
+\usepackage{fullpage}
+\begin{document}
+
+\begin{center}
+{\LARGE Mondo-Mario Party}
+\end{center}
+
+\section{Preface}
+
+Mario Party is one of the few, truly, timeless classics we have left in
+this world.  The goal of this paper is to provide a framework for celebrating
+the impressive achievements of the Nintendo corporation and the original
+designer of the series, Shigeru Miyamoto.
+
+\section{Terms}
+
+\begin{description}
+\item[Bank Space] A yellow \textbf{space} depicting a coin that,
+when passed, requires the \textbf{player} to deposit five (5) \textbf{coins}.
+If the player does not have five (5) or more coins then all of the player's
+coins are deposited.  If a player lands on the space then that player
+receives all of the coins currently deposited in the bank.
+
+\item[Blue Space] A \textbf{space} that, when landed on, grants the
+\textbf{player} three (3) \textbf{coins}.
+
+\item[Board] A collection of \textbf{spaces} and mechanics that the
+\textbf{players} traverse.
+
+\item[Board Event] A green ``?'' \textbf{space} that, when landed on,
+initiates a Board Event.  A Board Event may be a \textbf{microgame},
+forced movement, or alteration of the \textbf{board}.
+
+\item[Bowser Space] A red \textbf{space} depicting fangs that,
+when landed on, initiates a Bowser Time \textbf{microgame} (see
+section \textbf{Microgames}).
+
+\item[Chance Time] A green ``!'' \textbf{space} that, when landed on,
+initiates the Chance Time \textbf{microgame} (see section
+\textbf{Microgames}).
+
+\item[Coin] Primary denomination of currency used on the \textbf{board}
+and used to settle \textbf{ties} in the event that all \textbf{players}
+have the same number of \textbf{stars}.
+
+\item[Dice] A method of determining movement and order. The default
+\textbf{die} is ten-sided (10-sided).  The die may be modified by the
+use of \textbf{items}.
+
+\item[Die] See \textbf{dice}.
+
+\item[Duel Time] A green ``X'' \textbf{space} that, when landed on,
+initiates the Duel Time \textbf{microgame} (see section \textbf{Microgames}).
+
+\item[Item] An object usable by a \textbf{player} at the start of
+his or her \textbf{turn} or during special events. See section \textbf{Items}).
+
+\item[Item Store] A mushroom \textbf{space} that, when landed on,
+allows the \textbf{player} to purchase one (1) \textbf{item} for a pre-defined
+number of \textbf{coins}.
+
+\item[Microgame] An overworld game or event that may occur on a \textbf{player}'s
+\textbf{turn}. See section \textbf{Microgames}.
+
+\item[Minigame] A game played by every \textbf{player} at the end of a \textbf{round}.
+See section \textbf{Minigames}.  The winner(s) of a minigame are awarded
+some amount of \textbf{coins}.
+
+\item[Red Space] A \textbf{space} that, when landed on, takes up to
+three (3) \textbf{coins} from the \textbf{player}.  If the player does
+not have three (3) or more coins, then all of the player's remaining
+coins are taken.
+
+\item[Round] A round consists of \textbf{turns} and a \textbf{minigame}.
+Every \textbf{player} must take one (1), and no more than one (1),
+\textbf{turn} during a round.  Once all of the turns have been completed,
+the minigame is initiated.
+
+\item[Space] A circle of color, potentially with a symbol, that holds
+special meaning when a \textbf{player} ends their \textbf{turn} on it.
+These are walked on by the players.
+
+\item[Star] The highest weighted denomination in the game.  The \textbf{player}
+with the most stars at the end of the game is declared the \textbf{winner}
+of Mondo-Mario Party.
+
+\item[Star Space] A yellow \textbf{space} depicting a star that, when landed
+on, allows the \textbf{player} to purchase a \textbf{star} for twenty (20)
+\textbf{coins}.  The Star Space moves to a new location after a star has been
+purchased.
+
+\item[Tie] A tie occurs at the end of the game if more than one \textbf{player}
+has the same number of \textbf{stars}.  Ties are resolved in the following order:
+\begin{enumerate}
+\item Stars
+\item \textbf{Coins}
+\item Bribes to the Princess
+\item \textbf{Die} roll
+\end{enumerate}
+
+\item[Turn] Each \textbf{player} is given one (1) turn during each \textbf{round}.
+A turn is characterized by the following set of ordered actions:
+\begin{enumerate}
+\item Use \textbf{item}, if available.
+\item Roll either the ten-sided (10-sided) \textbf{die} or the result of
+item use if the item modified the player's dice.
+\item Move along the \textbf{board} until the rolled number of \textbf{spaces}
+has been traversed.
+\end{enumerate}
+
+\item[Winner] The ultimate champion of Mondo-Mario Party.  There can only be one
+and it probably wont be you.
+
+\end{description}
+
+\section{Items}
+
+The following are the items available during the game and their associated
+costs.
+
+\subsection{Item Prices}
+\begin{tabular}{|l|c|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Item Prices}} \\
+\hline
+\textbf{Item} & \textbf{Price (coins)} \\
+\hline
+Mushroom & 5 \\ % 2 dice blocks
+Poison Mushroom & 5 \\ % Only allow 1, 2, 3, use on anyone
+Reverse Mushroom & 5 \\ % Allows go backwards use on anyone
+Warp Block & 5 \\ % switch with random player position
+Dueling Glove & 10 \\ % Duel anyone in a duel microgame
+Golden Mushroom & 10 \\ % 3 dice blocks
+Lucky Lamp & 10 \\ % Force-moves the star
+Plunder Chest & 10 \\ % steal random item from a player
+Magic Lamp & 20 \\ % Moves the player to the star
+%Boo Repellent & 10 \\ % stops boo
+%Boo Bell & 15 \\ Summons boo
+%Skeleton Key & 5 \\ open special doors
+%Item Bag & 30 \\ 3 random items (+rares)
+%Wacky Watch & N/A \\ advance to Last Five Turns (can extend or shorten)
+%Barder Box  & N/A \\ swap all items with another player
+%Koopa Kard & N/A \\ take all coins from bank when passing
+%Lucky Charm & N/A \\ force a player to a Game Guy Microgame
+\hline
+\end{tabular}
+
+\subsection{Item Descriptions}
+\begin{description}
+\item[Mushroom] The player rolls two (2) ten-sided (10-sided) dice instead
+of one (1).
+
+\item[Poison Mushroom] Used on another player (including the current player).
+The next roll by the target may only be one (1), two (2), or three (3).
+
+\item[Reverse Mushroom] Used on another player (including the current player).
+The next roll by the target a six-sided (6-sided) die that moves the player backwards.
+
+\item[Warp Block] Swap the position of the current player with another random player.
+
+\item[Dueling Glove] Used on another player. Initiate a Duel Time Microgame with the target.
+See section \textbf{Microgames}.
+
+\item[Golden Mushroom] The player rolls three (3) ten-sided (10-sided) dice instead
+of one (1).
+
+\item[Lucky Lamp] Forces the star space to be moved.
+
+\item[Plunder Chest] Used on another player. Steal a random item from the target.
+
+\item[Magic Lamp] Moves the player to the star and allows the player to purchase it.
+\end{description}
+
+\section{Microgames}
+
+Microgames are smaller games and events that happen throughout the overworld external
+to Minigames.  They are divided by source.
+
+\subsection{Board Event}
+
+None so far. These are triggered during movement and effect the board.
+
+\subsection{Bowser Time}
+
+Bowser Time is initiated when a player lands on a Bowser Space.  The player
+is confronted with the big baddy himself and is subjected to a wheel of
+misfortune containing the following entries:
+
+\begin{description}
+\item[Bowser Chance Time] See \textbf{Bowser Chance Time} section.
+\item[Bowser Minigame] See \textbf{Bowser Minigames} section.
+
+\item[Steal Star] Bowser takes one of the player's stars.  If the player has no
+stars then bowser steals either twenty (20) coins or all of the player's coins,
+whichever is smaller.
+
+\item[Steal 5 Coins] Bowser takes five (5) coins from the player.
+\item[Steal 10 Coins] Bowser takes ten (10) coins from the player.
+\item[Steal 20 Coins] Bowser takes twenty (20) coins from the player.
+
+\item[Socialist Party] Bowser all the coins from every player and
+redistributes the wealth evenly.
+
+\item[Tipsy Timmy] All players are under the effect of either the
+poison or the reverse mushroom.
+
+\item[The Pipes] All players positions are shuffled and redistributed.
+\end{description}
+
+\subsubsection{Bowser Chance Time}
+
+The Chance Time Microgame is performed by Bowser with the target being the player.
+The transfer die is modified such that player may never gain coins or stars.
+See the \textbf{Chance Time} section.
+
+\subsubsection{Bowser Minigame}
+
+The player is subjected to a one-player minigame against bowser.  Bowser takes up to
+twenty (20) coins from the player if they lose.
+
+
+\noindent
+No games have been defined so far.
+
+\subsection{Chance Time}
+
+Chance Time allows a player to steal coins or stars from another player but can also
+provide the opposite.
+
+
+\noindent
+Chance Time consists of two dice (decks of cards actually):
+
+\begin{description}
+\item[Select Player] Roll/draw to determine the target player.
+\item[Transfer] Roll/draw to determine what action is performed.
+\item[Direction] Which direction the transfer is performed
+(player-to-target or target-to-player).
+\end{description}
+
+
+\noindent
+Possible transfer actions (weights have yet to be determined):
+
+\begin{description}
+\item[Give 5 Coins] Give the target (directional) 5 coins.
+\item[Give 10 Coins] Give the target (directional) 10 coins.
+\item[Give 20 Coins] Give the target (directional) 20 coins.
+\item[Give 50 Coins] Give the target (directional) 50 coins.
+\item[Give 1 Star] Give the target (directional) 1 star.
+\item[Give 2 Stars] Give the target (directional) 2 stars.
+\item[Swap Stars] Swaps stars with the target.
+\item[Swap Coins] Swap coins with the target.
+\item[Swap All] Swap both coins and stars with the target.
+\end{description}
+
+\subsection{Duel Time}
+
+Duel Time allows a player to bet with another player that they can win.
+Each player is deducted some amount of coins (drawn from a deck / die roll).
+The players duel.
+The winner takes the pooled coins.
+
+\subsubsection{Duel Time Minigames}
+
+\begin{description}
+\item[Mario Feud] - Single round, Family Feud-style
+\item[...] - Rock paper scissors? we need more.
+\end{description}
+
+\section{Minigames}
+
+Minigames are played at the end of each round.  They are divided up into multiple
+categories: 1-vs-all, teams, and free-for-all.  Minigames award twenty (20) coins
+to the winning entity.
+
+\subsection{1-Vs-All}
+
+Bad for high-player counts since the 'All' get the twenty (20) coins distributed over them
+but the one (1) gets a good payout.
+
+\begin{description}
+\item[...]
+\end{description}
+
+\subsection{Teams}
+
+Also bad for high-player counts since the teams  get the twenty (20) coins distributed over them.
+
+\begin{description}
+\item[Codenames] A single round of codenames (themed?)
+\item[...]
+\end{description}
+
+\subsection{Free-For-All}
+
+Only one winner.  The winner takes the twenty (20) coins.
+
+\begin{description}
+\item[Coup] A single round of Mario-themed Coup (or normal coup depending on remaining funds).
+\item[Boggled] A bigger Big Boggle.  Single round. (or normal big boggle depending on remaining funds).
+\item[...]
+\end{description}
+
+\section{Required Materials}
+
+Materials needed for the game.  The goal is to cut the costs as much as possible.
+
+\begin{description}
+\item[Board Spaces] Poster board and spray paint?
+
+\item[Coins] A couple decks of cards are cheap and easily made.
+Probably have 1, 3, 5, 10, 20, 50 as values.
+
+\item[Stars] Not sure yet, giving out cards for these just feels wrong. Might be able to find
+some decently cheap pewter/zinc stars or I can pull the sheriff badges off the rest of the
+cowboy hats that are currently sitting in my room.
+
+\item[Items] These will be cards with descriptions on them.
+
+\item[Minigames] Also cards! Shuffle and draw instead of making a giant-ass wheel.
+
+\item[Other Random Stuff] Probably going to use decks of cards for almost all random
+chance rolls since they're so cheap.  Like \$1.66 per 18 cards (\$5 for a deck of 54 cards).
+
+\item[Player Designation] You all gonna be colors.  I original wanted to do Poles to be placed on the spaces,
+but maybe colored bandannas?  Everyone has to wear their color and then a pair is placed on the space when
+moving off of it (minigames/events).
+
+\item[Dice] It's really hard to find big dice.  I've got some larger-than-normal foam dice but massive
+dice don't exist outside of d6, so I think little dice will be needed here... The other option is switching
+to cards instead of the dice also.  Figuring out the distributions is not difficult.  Simple probabilities.
+\end{description}
+
+\section{What's Next}
+
+The following is a list of things that are necessary before the plan can be put into action:
+
+\begin{itemize}
+\item Finalize minigame lists (bowser, duel, 1-vs-all, free-for-all, team)
+\item Determine max players (10? 12?)
+\item Determine turn count (15 or less depending on players and how much time being taken?)
+\item Design a map
+\item Make card artwork
+\item Pick an exact date
+\item Select and acquire a trophy.
+\item Find a location to use for the event
+\end{itemize}
+
+
+I'm hoping everything comes out cheap enough to not need to ask for admission or donations.
+
+\end{document}
