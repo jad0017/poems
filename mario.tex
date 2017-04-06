@@ -172,6 +172,173 @@ of one (1).
 \item[Magic Lamp] Moves the player to the star and allows the player to purchase it.
 \end{description}
 
+\section{Item Cards}
+
+Ignore the above item selection, we doin' this a better way.  Item Cards are similar
+to the old items except they can be used to interfere with the board and other players.
+Some Item Cards are placed on the board and effect 1) those who pass them, or 2)
+those who land on them.  Cards are free, however they have an associated cost when
+used.  They are given randomly by the Item Card Houses when passed.  The maximum
+cards a player can hold is three (3).
+\\\\
+\noindent
+Cards and their effects are divided into four (4) categories.
+
+\begin{description}
+\item[Movement]~\\
+These cards are colored \textbf{Green} and effect movement.
+
+\item[Money]~\\
+These cards are colored \textbf{Yellow} and effect coinage.
+
+\item[Attack]~\\
+These cards are colored \textbf{Red} and effect opponents.
+
+\item[Board]~\\
+These cards are colored \textbf{Blue} and effect the board.
+
+\item[Passive]~\\
+These cards are colored \textbf{Grey} and are held and provide
+a passive effect.
+\end{description}
+
+\noindent
+Cards can have one of three designators.
+
+\begin{description}
+\item[Board (B)]~\\
+These cards are placed on the board within a three (3) space span
+of the player in either direction.  If accompanied by a lowercase
+'d'---as in 'Bd'---then the card is removed from the board after use.
+
+\item[Player (P)]~\\
+These cards are useable on the active player or an opponant.
+If accompanied by a lowercase 'a'---as in 'Pa'---then the card is passive
+
+\item[Both (S)]~\\
+These cards may either be placed on the board or used on either
+the active player or an opponant. The lowercase 'd' modifier is applicable.
+\end{description}
+
+
+\noindent
+When placed on the board a special marker is used for visibility along with a
+colored piece specifying which player placed the card.  This is important for
+the effects of some cards (see below).
+
+\subsection{Movement Cards}
+
+These cards are \textbf{Green} and effect the movement of players.
+\\\\
+
+\begin{tabular}{lccp{5cm}}
+\textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
+\hline
+Mushroom & 5 & P & Roll 2x10 dice \\
+&&& \\
+Poison Mushroom & 5 & P & Roll a 1x5 die \\
+&&& \\
+Stork & 5 & Bd & Lander moves back to the start space \\
+&&& \\
+Bubble & 10 & Sd & Move 10 spaces forward and lose all cards \\
+&&& \\
+Golden Mushroom & 10 & P & Roll 3x10 dice \\
+&&& \\
+Klepto & 10 & Sd & Move to the space of a random opponant \\
+&&& \\
+Metal Mushroom & 10 & P & Prevent the effect of traps for this turn \\
+&&& \\
+Warp Pipe & 10 & Sd & Swap places with a random opponant \\
+&&& \\
+Wiggler & 20 & P & Wiggle on down to the star space \\
+&&& \\
+\end{tabular}
+
+\subsection{Money Cards}
+
+These cards are \textbf{Yellow} and effect coinage.
+\\\\
+
+\begin{tabular}{lccp{5cm}}
+\textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
+\hline
+Coin Block & 5 & P & Gain three (3) coins for every space moved this turn \\
+&&& \\
+Spring & 5 & Bd & Lander loses ten (10) coins \\
+&&& \\
+Goomba & 10 & Bd & Lander gives 1x10 die of coins to the owner of the space \\
+&&& \\
+Podoboo & 10 & Bd & Passing player loses ten (10) coins \\
+&&& \\
+Piranha Plant & 15 & Bd & Lander gives the owner half of their coins \\
+&&& \\
+Zap & 15 & Bd & Passing player loses five (5) coins for each remaning space moved \\
+\end{tabular}
+
+\subsection{Attack Cards}
+
+These cards are \textbf{Red} and effect opponents.
+\\\\
+
+\begin{tabular}{lccp{5cm}}
+\textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
+\hline
+Toady & 5 & Bd & Owner steals a card from the lander \\
+&&& \\
+Blizard & 10 & Bd & Lander loses all of their held cards \\
+&&& \\
+Bomb-omb & 10 & Bd & Passer's remaining movement is halved \\
+&&& \\
+Kamek & 10 & Bd & Owner takes one (1) to three (3) cards of the lander from the board \\
+&&& \\
+Koopa Troopa & 10 & Bd & Passing player switches places with the owner \\
+&&& \\
+Lakitu & 10 & P & Steal a card from an opponant of your choosing \\
+&&& \\
+Magikoopa & 10 & Sd & Swap all cards with a random opponant \\
+&&& \\
+Thwomp & 10 & Bd & Passing player must stop moving \\
+&&& \\
+Twister & 10 & Sd & All player cards are shuffled and redistributed \\
+&&& \\
+Pink Boo & 30 & Bd & Lander loses a star, or twenty 20 coins if none \\
+\end{tabular}
+
+\subsection{Board Cards}
+
+These cards are \textbf{Blue} and effect the board.
+\\\\
+
+\begin{tabular}{lccp{5cm}}
+\textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
+\hline
+Bowser & 0 & B & When received, Bowser places a new Bowser Space on the board \\
+&&& \\
+Bank & 10 & B & Place a Bank Space \\
+&&& \\
+Boo & 15 & Sd & Summon Boo or place a Boo space \\
+&&& \\
+Chance & 20 & Sd & Initiate Chance Time or place a Chance Time Space \\
+&&& \\
+Duel & 20 & Sd & Initiate a Duel or place a Duel Space \\
+&&& \\
+Tweester & 15 & P & Reshuffle the Star Space \\
+\end{tabular}
+
+\subsection{Passive Cards}
+
+These cards are \textbf{Grey} and are held and provide a passive effect.
+Passive cards may be discarded at the start of your turn.
+\\\\
+
+\begin{tabular}{lccp{5cm}}
+\textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
+\hline
+Boo-Away & 0 & Po & Prevent Boo if attacked \\
+&&& \\
+Miracle & 0 & Po & Collect three (3) and you gain a star \\
+\end{tabular}
+
 \section{Microgames}
 
 Microgames are smaller games and events that happen throughout the overworld external
@@ -274,6 +441,18 @@ The winner takes the pooled coins.
 Minigames are played at the end of each round.  They are divided up into multiple
 categories: 1-vs-all, teams, and free-for-all.  Minigames award ten (10) coins
 to the winning entity.
+
+
+In Mario Party, the average breakdown of minigames per category (rounded up) is as follows.
+
+\begin{tabular}{l|r}
+\textbf{Type} & \textbf{Count} \\
+\hline
+Free-For-All & 22 \\
+1-Vs-3 & 11 \\
+2-Vs-2 & 10 \\
+Battle & 6 \\
+\end{tabular}
 
 \subsection{1-Vs-All}
 
