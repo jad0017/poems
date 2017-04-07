@@ -1,5 +1,7 @@
 \documentclass{article}
 \usepackage{fullpage}
+\usepackage{enumitem}
+\usepackage{tabularx}
 \begin{document}
 
 \begin{center}
@@ -15,7 +17,7 @@ designer of the series, Shigeru Miyamoto.
 
 \section{Terms}
 
-\begin{description}
+\begin{description}[style=nextline]
 \item[Bank Space] A yellow \textbf{space} depicting a coin that,
 when passed, requires the \textbf{player} to deposit five (5) \textbf{coins}.
 If the player does not have five (5) or more coins then all of the player's
@@ -114,90 +116,33 @@ and it probably wont be you.
 
 \end{description}
 
-\section{Items}
+\section{Items (Cards)}
 
-The following are the items available during the game and their associated
-costs.
-
-\subsection{Item Prices}
-\begin{tabular}{|l|c|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Item Prices}} \\
-\hline
-\textbf{Item} & \textbf{Price (coins)} \\
-\hline
-Mushroom & 5 \\ % 2 dice blocks
-Poison Mushroom & 5 \\ % Only allow 1, 2, 3, use on anyone
-Reverse Mushroom & 5 \\ % Allows go backwards use on anyone
-Warp Block & 5 \\ % switch with random player position
-Dueling Glove & 10 \\ % Duel anyone in a duel microgame
-Golden Mushroom & 10 \\ % 3 dice blocks
-Lucky Lamp & 10 \\ % Force-moves the star
-Plunder Chest & 10 \\ % steal random item from a player
-Magic Lamp & 20 \\ % Moves the player to the star
-%Boo Repellent & 10 \\ % stops boo
-%Boo Bell & 15 \\ Summons boo
-%Skeleton Key & 5 \\ open special doors
-%Item Bag & 30 \\ 3 random items (+rares)
-%Wacky Watch & N/A \\ advance to Last Five Turns (can extend or shorten)
-%Barder Box  & N/A \\ swap all items with another player
-%Koopa Kard & N/A \\ take all coins from bank when passing
-%Lucky Charm & N/A \\ force a player to a Game Guy Microgame
-\hline
-\end{tabular}
-
-\subsection{Item Descriptions}
-\begin{description}
-\item[Mushroom] The player rolls two (2) ten-sided (10-sided) dice instead
-of one (1).
-
-\item[Poison Mushroom] Used on another player (including the current player).
-The next roll by the target may only be one (1), two (2), or three (3).
-
-\item[Reverse Mushroom] Used on another player (including the current player).
-The next roll by the target a six-sided (6-sided) die that moves the player backwards.
-
-\item[Warp Block] Swap the position of the current player with another random player.
-
-\item[Dueling Glove] Used on another player. Initiate a Duel Time Microgame with the target.
-See section \textbf{Microgames}.
-
-\item[Golden Mushroom] The player rolls three (3) ten-sided (10-sided) dice instead
-of one (1).
-
-\item[Lucky Lamp] Forces the star space to be moved.
-
-\item[Plunder Chest] Used on another player. Steal a random item from the target.
-
-\item[Magic Lamp] Moves the player to the star and allows the player to purchase it.
-\end{description}
-
-\section{Item Cards}
-
-Ignore the above item selection, we doin' this a better way.  Item Cards are similar
-to the old items except they can be used to interfere with the board and other players.
+Item Cards are similar to the way the traditional item system works except
+they can be used to interfere with the board and other players.
 Some Item Cards are placed on the board and effect 1) those who pass them, or 2)
 those who land on them.  Cards are free, however they have an associated cost when
 used.  They are given randomly by the Item Card Houses when passed.  The maximum
 cards a player can hold is three (3).
-\\\\
+\vspace{2ex}
+
 \noindent
 Cards and their effects are divided into four (4) categories.
 
-\begin{description}
-\item[Movement]~\\
+\begin{description}[style=nextline]
+\item[Movement]
 These cards are colored \textbf{Green} and effect movement.
 
-\item[Money]~\\
+\item[Money]
 These cards are colored \textbf{Yellow} and effect coinage.
 
-\item[Attack]~\\
+\item[Attack]
 These cards are colored \textbf{Red} and effect opponents.
 
-\item[Board]~\\
+\item[Board]
 These cards are colored \textbf{Blue} and effect the board.
 
-\item[Passive]~\\
+\item[Passive]
 These cards are colored \textbf{Grey}, are held, and provide
 a passive effect.
 \end{description}
@@ -205,17 +150,17 @@ a passive effect.
 \noindent
 Cards can have one of three designators.
 
-\begin{description}
-\item[Board (B)]~\\
+\begin{description}[style=nextline]
+\item[Board (B)]
 These cards are placed on the board within a three (3) space span
 of the player in either direction.  If accompanied by a lowercase
 ``d''---as in ``Bd''---then the card is removed from the board after use.
 
-\item[Player (P)]~\\
+\item[Player (P)]
 These cards are useable on the active player or an opponant.
 If accompanied by a lowercase ``a''---as in ``Pa''---then the card is passive
 
-\item[Both (S)]~\\
+\item[Both (S)]
 These cards may either be placed on the board or used on either
 the active player or an opponant. The lowercase ``d'' modifier is applicable.
 \end{description}
@@ -229,7 +174,7 @@ the effects of some cards (see below).
 \subsection{Movement Cards}
 
 These cards are \textbf{Green} and effect the movement of players.
-\\\\
+\vspace{2ex}
 
 \begin{tabular}{lccp{5cm}}
 \textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
@@ -257,30 +202,30 @@ Wiggler & 20 & P & Wiggle on down to the star space \\
 \subsection{Money Cards}
 
 These cards are \textbf{Yellow} and effect coinage.
-\\\\
+\vspace*{2ex}
 
-\begin{tabular}{lccp{5cm}}
+\begin{tabular}{lccl}
 \textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
 \hline
-Coin Block & 5 & P & Gain three (3) coins for every space moved this turn \\
+Coin Block & 5 & P & Gain three (3) coins for every space moved \\
 &&& \\
 Spring & 5 & Bd & Lander loses ten (10) coins \\
 &&& \\
-Goomba & 10 & Bd & Lander gives 1x10 die of coins to the owner of the space \\
+Goomba & 10 & Bd & Lander gives 1x10 die of coins to the owner \\
 &&& \\
 Podoboo & 10 & Bd & Passing player loses ten (10) coins \\
 &&& \\
 Piranha Plant & 15 & Bd & Lander gives the owner half of their coins \\
 &&& \\
-Zap & 15 & Bd & Passing player loses five (5) coins for each remaning space moved \\
+Zap & 15 & Bd & Passer loses five (5) coins for each remaning space \\
 \end{tabular}
 
 \subsection{Attack Cards}
 
 These cards are \textbf{Red} and effect opponents.
-\\\\
+\vspace*{2ex}
 
-\begin{tabular}{lccp{5cm}}
+\begin{tabular}{lccl}
 \textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
 \hline
 Toady & 5 & Bd & Owner steals a card from the lander \\
@@ -289,7 +234,7 @@ Blizard & 10 & Bd & Lander loses all of their held cards \\
 &&& \\
 Bomb-omb & 10 & Bd & Passer's remaining movement is halved \\
 &&& \\
-Kamek & 10 & Bd & Owner takes one (1) to three (3) cards of the lander from the board \\
+Kamek & 10 & Bd & Owner takes 1-3 cards of the lander from the board \\
 &&& \\
 Koopa Troopa & 10 & Bd & Passing player switches places with the owner \\
 &&& \\
@@ -307,12 +252,12 @@ Pink Boo & 30 & Bd & Lander loses a star, or twenty 20 coins if none \\
 \subsection{Board Cards}
 
 These cards are \textbf{Blue} and effect the board.
-\\\\
+\vspace*{2ex}
 
-\begin{tabular}{lccp{5cm}}
+\begin{tabular}{lccl}
 \textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
 \hline
-Bowser & 0 & B & When received, Bowser places a new Bowser Space on the board \\
+Bowser & 0 & BS & Bowser places a new Bowser Space on the board \\
 &&& \\
 Bank & 10 & B & Place a Bank Space \\
 &&& \\
@@ -329,9 +274,9 @@ Tweester & 15 & P & Reshuffle the Star Space \\
 
 These cards are \textbf{Grey} and are held and provide a passive effect.
 Passive cards may be discarded at the start of your turn.
-\\\\
+\vspace*{2ex}
 
-\begin{tabular}{lccp{5cm}}
+\begin{tabular}{lccl}
 \textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
 \hline
 Boo-Away & 0 & Pa & Prevent Boo if attacked \\
@@ -354,7 +299,7 @@ Bowser Time is initiated when a player lands on a Bowser Space.  The player
 is confronted with the big baddy himself and is subjected to a wheel of
 misfortune containing the following entries:
 
-\begin{description}
+\begin{description}[style=nextline]
 \item[Bowser Chance Time] See \textbf{Bowser Chance Time} section.
 \item[Bowser Minigame] See \textbf{Bowser Minigames} section.
 
@@ -385,7 +330,7 @@ See the \textbf{Chance Time} section.
 
 The player is subjected to a one-player minigame against bowser.  Bowser takes up to
 twenty (20) coins from the player if they lose.
-
+\vspace*{2ex}
 
 \noindent
 No games have been defined so far.
@@ -399,18 +344,18 @@ provide the opposite.
 \noindent
 Chance Time consists of two dice (decks of cards actually):
 
-\begin{description}
+\begin{description}[style=nextline]
 \item[Select Player] Roll/draw to determine the target player.
 \item[Transfer] Roll/draw to determine what action is performed.
 \item[Direction] Which direction the transfer is performed
 (player-to-target or target-to-player).
 \end{description}
-
+\vspace*{2ex}
 
 \noindent
 Possible transfer actions (weights have yet to be determined):
 
-\begin{description}
+\begin{description}[style=nextline]
 \item[Give 5 Coins] Give the target (directional) 5 coins.
 \item[Give 10 Coins] Give the target (directional) 10 coins.
 \item[Give 20 Coins] Give the target (directional) 20 coins.
@@ -431,7 +376,7 @@ The winner takes the pooled coins.
 
 \subsubsection{Duel Time Minigames}
 
-\begin{description}
+\begin{description}[style=nextline]
 \item[Mario Feud] - Single round, Family Feud-style
 \item[...] - Rock paper scissors? we need more.
 \end{description}
@@ -441,11 +386,13 @@ The winner takes the pooled coins.
 Minigames are played at the end of each round.  They are divided up into multiple
 categories: 1-vs-all, teams, and free-for-all.  Minigames award ten (10) coins
 to the winning entity.
+\vspace*{2ex}
 
-
+\noindent
 In Mario Party, the average breakdown of minigames per category (rounded up) is as follows.
+\vspace*{2ex}
 
-\begin{tabular}{l|r}
+\begin{tabular}{l|c}
 \textbf{Type} & \textbf{Count} \\
 \hline
 Free-For-All & 22 \\
@@ -458,7 +405,7 @@ Battle & 6 \\
 
 All players of the winning team gain ten (10) coins.
 
-\begin{description}
+\begin{description}[style=nextline]
 \item[...]
 \end{description}
 
@@ -466,7 +413,7 @@ All players of the winning team gain ten (10) coins.
 
 All players of the winning team gain ten (10) coins.
 
-\begin{description}
+\begin{description}[style=nextline]
 \item[Codenames] A single round of codenames (themed?)
 \item[...]
 \end{description}
@@ -475,7 +422,7 @@ All players of the winning team gain ten (10) coins.
 
 Only one winner.  The winner takes the ten (10) coins.
 
-\begin{description}
+\begin{description}[style=nextline]
 \item[Coup] A single round of Mario-themed Coup (or normal coup depending on remaining funds).
 \item[Boggled] A bigger Big Boggle.  Single round. (or normal big boggle depending on remaining funds).
 \item[...]
@@ -485,7 +432,7 @@ Only one winner.  The winner takes the ten (10) coins.
 
 Materials needed for the game.  The goal is to cut the costs as much as possible.
 
-\begin{description}
+\begin{description}[style=nextline]
 \item[Board Spaces] Poster board and spray paint?
 
 \item[Coins] A couple decks of cards are cheap and easily made.
@@ -525,8 +472,9 @@ The following is a list of things that are necessary before the plan can be put 
 \item Select and acquire a trophy.
 \item Find a location to use for the event
 \end{itemize}
+\vspace*{2ex}
 
-
+\noindent
 I'm hoping everything comes out cheap enough to not need to ask for admission or donations.
 
 \end{document}
