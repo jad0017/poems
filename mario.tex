@@ -55,12 +55,19 @@ use of \textbf{items}.
 \item[Duel Time] A green ``X'' \textbf{space} that, when landed on,
 initiates the Duel Time \textbf{microgame} (see section \textbf{Microgames}).
 
-\item[Item] An object usable by a \textbf{player} at the start of
+\item[Item] An card/object usable by a \textbf{player} at the start of
 his or her \textbf{turn} or during special events. See section \textbf{Items}).
 
 \item[Item Store] A mushroom \textbf{space} that, when landed on,
-allows the \textbf{player} to purchase one (1) \textbf{item} for a pre-defined
-number of \textbf{coins}.
+allows the \textbf{player} the following options.
+
+	\begin{enumerate}
+	\item To purchase one (1) of many ``stock'' \textbf{item} cards
+		for a pre-defined number of \textbf{coins}.
+	\item To receive one (1) free random \textbf{item} card.
+	\item To purchase a grab-bag of three (3) random \textbf{item} cards
+		for a pre-defined number of \textbf{coins}.
+	\end{enumerate}
 
 \item[Microgame] An overworld game or event that may occur on a \textbf{player}'s
 \textbf{turn}. See section \textbf{Microgames}.
@@ -95,7 +102,7 @@ purchased.
 \item[Tie] A tie occurs at the end of the game if more than one \textbf{player}
 has the same number of \textbf{stars}.  Ties are resolved in the following order:
 \begin{enumerate}
-\item Stars
+\item \textbf{Stars}
 \item \textbf{Coins}
 \item Bribes to the Princess
 \item \textbf{Die} roll
@@ -114,16 +121,104 @@ has been traversed.
 \item[Winner] The ultimate champion of Mondo-Mario Party.  There can only be one
 and it probably wont be you.
 
+\item[Ztar] The opposite of a \textbf{star}.  Currently, a ztar is a forced purchase
+resulting in a loss of twenty (20) \textbf{coins}.  Later this may expand to the
+reduction of a \textbf{player's} star count, depending on circumstance.
+
 \end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FLOW
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Game Flow}
+
+Each game of Mondo-Mario Party is roughly equivalent.  The number of
+turns is flexible, however 10-15 turns is the expected maximum.
+
+\begin{enumerate}
+\item Each player rolls for turn-order.  The player with the highest value
+roll is first with each remaning spot in descending value.
+
+\item For each round
+	\begin{enumerate}
+	\item Each player takes his/her turn in turn-order
+		\begin{enumerate}
+		\item The player is prompted for options
+		\item The player rolls the die/dice
+		\item The player moves along the board
+		\item The player suffers the consequences of the resulting square
+		\end{enumerate}
+	\item Once all turns are complete, a minigame is held.
+	\end{enumerate}
+
+\item Once the rounds are complete, the winner is determined by total stars
+followed by coins and so on.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Actions}
+
+Actions are a set of standard responses that each player may perform in various
+situations.  This section details the basic actions which may be altered by
+board theme.
+
+
+\subsection{Start-of-Turn Player Actions}
+
+These actions are performed by the player at the start of his/her turn before rolling.
+
+\begin{description}[style=nextline]
+\item[Roll] Perform no actions and roll the die to begin the turn.
+\item[Use Item] Use one of the player's available items.
+\end{description}
+
+\subsection{Item Actions}
+
+These actions are dependent on the type of item and only apply when an item is being used.
+
+\begin{description}[style=nextline]
+\item[Use on Self] If the item is usable on the player, do so.
+\item[Use on Board] If the item is usable on the board, do so.
+The range that the player may ``lob'' the item in-front-of or behind
+them is specified on the card.
+\item[Use on Player] If the item is usable on another player, do so.
+\item[Cancel] Cancel the use of the selected item.
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ITEMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Items (Cards)}
 
 Item Cards are similar to the way the traditional item system works except
 they can be used to interfere with the board and other players.
 Some Item Cards are placed on the board and effect 1) those who pass them, or 2)
-those who land on them.  Cards are free, however they have an associated cost when
-used.  They are given randomly by the Item Card Houses when passed.  The maximum
-cards a player can hold is three (3).
+those who land on them.
+
+
+\noindent
+Cards may be obtained in one of five (5) ways.
+
+\begin{enumerate}
+\item Obtained for free by passing an Item Card House.
+(one (1) random card)
+\item Bought from a grab-bag at an Item Card House for 15 coins.
+(three (3) random cards)
+\item Bought from an Item Card House.
+(one (1) specific card)
+\item Obtained from a Board Event.
+(depends on the event)
+\item Obtained from a Bowser Event.
+(depends on the event)
+\end{enumerate}
+
+Many cards that are obtained for free have an associated cost when used.
+The maximum cards a player can hold is three (3) and so purchasing a grab-bag
+with a non-empty inventory will yield the player only the cards he/she can
+carry.
 \vspace{2ex}
 
 \noindent
@@ -148,7 +243,7 @@ a passive effect.
 \end{description}
 
 \noindent
-Cards can have one of three designators.
+Cards can have one of three (3) designators.
 
 \begin{description}[style=nextline]
 \item[Board (B)]
@@ -165,6 +260,13 @@ These cards may either be placed on the board or used on either
 the active player or an opponant. The lowercase ``d'' modifier is applicable.
 \end{description}
 
+\noindent
+Cards marked with a ``T'' or ``BB'' are purchaseable ``stock'' cards.
+They do not cost anything to use, however the cost listed is the up-front purchase
+price.  Cards marked with ``T'' are bought from a Toad Card House whereas cards
+marked with ``BB'' are bought from a Baby Bowser card house.
+\vspace*{2ex}
+
 
 \noindent
 When placed on the board a special marker is used for visibility along with a
@@ -176,27 +278,29 @@ the effects of some cards (see below).
 These cards are \textbf{Green} and effect the movement of players.
 \vspace{2ex}
 
-\begin{tabular}{lccp{5cm}}
-\textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
+\begin{tabular}{clccp{5cm}}
+\textbf{S} & \textbf{Name} & \textbf{Cost} & \textbf{Designator}
+& \textbf{Effect} \\
 \hline
-Mushroom & 5 & P & Roll 2x10 dice \\
-&&& \\
-Poison Mushroom & 5 & P & Roll a 1x5 die \\
-&&& \\
-Stork & 5 & Bd & Lander moves back to the start space \\
-&&& \\
-Bubble & 10 & Sd & Move 10 spaces forward and lose all cards \\
-&&& \\
-Golden Mushroom & 10 & P & Roll 3x10 dice \\
-&&& \\
-Klepto & 10 & Sd & Move to the space of a random opponant \\
-&&& \\
-Metal Mushroom & 10 & P & Prevent the effect of traps for this turn \\
-&&& \\
-Warp Pipe & 10 & Sd & Swap places with a random opponant \\
-&&& \\
-Wiggler & 20 & P & Wiggle on down to the star space \\
-&&& \\
+30 & Mushroom & 5 & P-T & Roll 2x10 dice \\
+&&&& \\
+10 & Poison Mushroom & 5 & P-BB & Roll a 1x5 die \\
+&&&& \\
+5 & Stork & 5 & Bd & Lander moves back to the start space \\
+&&&& \\
+5 & Bubble & 10 & Sd & Move 10 spaces forward and lose all cards \\
+&&&& \\
+15 & Golden Mushroom & 10 & P-T & Roll 3x10 dice \\
+&&&& \\
+5 & Klepto & 10 & Sd & Move to the space of a random opponant \\
+&&&& \\
+10 & Metal Mushroom & 10 & P-BB & Prevent the effect of traps for this turn \\
+&&&& \\
+15 & Warp Pipe & 10 & Sd-BB & Swap places with a random opponant \\
+&&&& \\
+10 & Wiggler & 20 & P-T & Wiggle on down to the star space \\
+&&&& \\
+10 & Reverse Shroom & 5 & P-BB & Roll 1x10 but move backwards \\
 \end{tabular}
 
 \subsection{Money Cards}
@@ -204,20 +308,21 @@ Wiggler & 20 & P & Wiggle on down to the star space \\
 These cards are \textbf{Yellow} and effect coinage.
 \vspace*{2ex}
 
-\begin{tabular}{lccl}
-\textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
+\begin{tabular}{clccl}
+\textbf{S} & \textbf{Name} & \textbf{Cost} & \textbf{Designator}
+& \textbf{Effect} \\
 \hline
-Coin Block & 5 & P & Gain three (3) coins for every space moved \\
-&&& \\
-Spring & 5 & Bd & Lander loses ten (10) coins \\
-&&& \\
-Goomba & 10 & Bd & Lander gives 1x10 die of coins to the owner \\
-&&& \\
-Podoboo & 10 & Bd & Passing player loses ten (10) coins \\
-&&& \\
-Piranha Plant & 15 & Bd & Lander gives the owner half of their coins \\
-&&& \\
-Zap & 15 & Bd & Passer loses five (5) coins for each remaning space \\
+5 & Coin Block & 5 & P & Gain three (3) coins for every space moved \\
+&&&& \\
+10 & Spring & 5 & Bd & Lander loses ten (10) coins \\
+&&&& \\
+5 & Goomba & 10 & Bd & Lander gives 1x10 die of coins to the owner \\
+&&&& \\
+10 & Podoboo & 10 & Bd & Passing player loses ten (10) coins \\
+&&&& \\
+5 & Piranha Plant & 15 & Bd & Lander gives the owner half of their coins \\
+&&&& \\
+5 & Zap & 15 & Bd & Passer loses five (5) coins for each remaning space \\
 \end{tabular}
 
 \subsection{Attack Cards}
@@ -225,28 +330,28 @@ Zap & 15 & Bd & Passer loses five (5) coins for each remaning space \\
 These cards are \textbf{Red} and effect opponents.
 \vspace*{2ex}
 
-\begin{tabular}{lccl}
-\textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
+\begin{tabular}{clccl}
+\textbf{S} & \textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
 \hline
-Toady & 5 & Bd & Owner steals a card from the lander \\
-&&& \\
-Blizard & 10 & Bd & Lander loses all of their held cards \\
-&&& \\
-Bomb-omb & 10 & Bd & Passer's remaining movement is halved \\
-&&& \\
-Kamek & 10 & Bd & Owner takes 1-3 cards of the lander from the board \\
-&&& \\
-Koopa Troopa & 10 & Bd & Passing player switches places with the owner \\
-&&& \\
-Lakitu & 10 & P & Steal a card from an opponant of your choosing \\
-&&& \\
-Magikoopa & 10 & Sd & Swap all cards with a random opponant \\
-&&& \\
-Thwomp & 10 & Bd & Passing player must stop moving \\
-&&& \\
-Twister & 10 & Sd & All player cards are shuffled and redistributed \\
-&&& \\
-Pink Boo & 30 & Bd & Lander loses a star, or twenty 20 coins if none \\
+10 & Toady & 5 & Bd & Owner steals a card from the lander \\
+&&&& \\
+5 & Blizard & 10 & Bd & Lander loses all of their held cards \\
+&&&& \\
+5 & Bomb-omb & 10 & Bd & Passer's remaining movement is halved \\
+&&&& \\
+5 & Kamek & 10 & Bd & Owner takes 1-3 cards of the lander from the board \\
+&&&& \\
+10 & Koopa Troopa & 10 & Bd & Passing player switches places with the owner \\
+&&&& \\
+5 & Lakitu & 10 & P & Steal a card from an opponant of your choosing \\
+&&&& \\
+10 & Magikoopa & 10 & Sd & Swap all cards with a random opponant \\
+&&&& \\
+10 & Thwomp & 10 & Bd & Passing player must stop moving \\
+&&&& \\
+5 & Twister & 10 & Sd & All player cards are shuffled and redistributed \\
+&&&& \\
+5 & Pink Boo & 30 & Bd & Lander loses a star, or twenty 20 coins if none \\
 \end{tabular}
 
 \subsection{Board Cards}
@@ -254,46 +359,140 @@ Pink Boo & 30 & Bd & Lander loses a star, or twenty 20 coins if none \\
 These cards are \textbf{Blue} and effect the board.
 \vspace*{2ex}
 
-\begin{tabular}{lccl}
-\textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
+\begin{tabular}{clccl}
+\textbf{S} & \textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
 \hline
-Bowser & 0 & BS & Bowser places a new Bowser Space on the board \\
-&&& \\
-Bank & 10 & B & Place a Bank Space \\
-&&& \\
-Boo & 15 & Sd & Summon Boo or place a Boo space \\
-&&& \\
-Chance & 20 & Sd & Initiate Chance Time or place a Chance Time Space \\
-&&& \\
-Duel & 20 & Sd & Initiate a Duel or place a Duel Space \\
-&&& \\
-Tweester & 15 & P & Reshuffle the Star Space \\
+5 & Bowser & 0 & BS & Bowser places a new Bowser Space on the board \\
+&&&& \\
+2 & Bank & 10 & B & Place a Bank Space \\
+&&&& \\
+2 & Boo & 15 & Sd & Summon Boo or place a Boo space \\
+&&&& \\
+2 & Chance & 20 & Sd & Initiate Chance Time or place a Chance Time Space \\
+&&&& \\
+2 & Duel & 20 & Sd & Initiate a Duel or place a Duel Space \\
+&&&& \\
+10 & Tweester & 15 & P-BB & Reshuffle the Star Space \\
 \end{tabular}
 
 \subsection{Passive Cards}
 
-These cards are \textbf{Grey} and are held and provide a passive effect.
+These cards are \textbf{purple} and are held and provide a passive effect.
 Passive cards may be discarded at the start of your turn.
 \vspace*{2ex}
 
-\begin{tabular}{lccl}
-\textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
+\begin{tabular}{clccl}
+\textbf{S} & \textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
 \hline
-Boo-Away & 0 & Pa & Prevent Boo if attacked \\
-&&& \\
-Miracle & 0 & Pa & Collect three (3) and you gain a star \\
+10 & Boo-Away & 0 & Pa & Prevent Boo if attacked \\ % -BB?
+&&&& \\
+15 & Miracle & 0 & Pa & Collect three (3) and you gain a star \\
 \end{tabular}
+
+\subsection{Board Cards}
+
+These cards are \textbf{Orange} and are used in various ways depending on the
+theme of the board.
+\vspace*{2ex}
+
+\begin{tabular}{clccl}
+\textbf{S} & \textbf{Name} & \textbf{Cost} & \textbf{Designator} & \textbf{Effect} \\
+\hline
+20 & Basic & N/A & N/A & Do something basic. \\
+&&&& \\
+20 & Special & N/A & N/A & Do something not-so-basic. \\
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Themes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Board Themes}
+
+Board Themes provide an extra layer of mechanics in an attempt to make the overworld
+portion of the game more interesting.
+
+\subsection{Murder Mystery}
+
+Oh deary, deary, you've all been invited to a very posh party but it seems something
+has gone awry.  One of the guests has be muuuuuuurdered and it's up to you to solve
+this unsightly affair before one of the other, less desirable, guests, steals the
+spot light.
+\vspace*{2ex}
+
+
+\noindent
+This theme takes the form of a ``Logic Puzzle'' (one of them grid thingies).  How it
+works:
+
+\begin{itemize}
+\item A new option ``Search For Clue'' is available at the start of a player's turn
+in place of ``Use Item''.  As In, if you use an item you cannot search for a clue.
+There is a 30-50\% chance of finding one.
+
+\item A new option ``Solve Mystery'' is available at the start of a player's turn
+in place of ``Use Item''.  When performed the player must provide their solution.
+
+\item The ``Basic Board Cards'' are used passivly and provide a guaranteed clue
+on Search. Only 10 will be present in-game. %Only 15 will be present in-game.
+
+%\item The ``Special Board Cards'' are used passivly and provide two clues at once.
+%Only five (5) will be present in-game.
+\end{itemize}
+
+\noindent
+The first player to solve the puzzle gains a star.
+
+\subsection{Monster Mash}
+
+You monster.  Rawr.  You smash good.  Building crumble to ground.  Most destroy
+get stawr.
+
+
+\noindent
+``Buildings'' will be present around the board.  They take three (3) hits to smash.
+Once a building is completely destroyed, a player identifier of the monster who
+smashed the building will be placed in its spot.  The player who has caused
+the most mayham at the end of the game will gain a star.  How it works:
+
+\begin{itemize}
+\item When passing by a non-destroyed building, player's have the option of
+``Taking a Swing'', dealing one hit to the building.
+
+\item If the building crumbles, the player's identifier is left on the spot
+for accountability.
+
+\item The ``Basic Board Cards'' are used passivly and provide a double-swing
+on a building.  Fifteen (15) will be present in-game.
+
+\item The ``Special Board Cards'' are used passivly and ressurrect a fallen
+building.  A building that has been resurrected is no longer associated with
+the original smasher and is free to be claimed by the next player who deals
+the final blow.  Ten (10) will be present in-game.
+\end{itemize}
+
+\subsection{Which Witch is Which?}
+
+No deets yet but I want a witchcraft theme... something with scrying orbs or
+tarot cards?
 
 \section{Microgames}
 
 Microgames are smaller games and events that happen throughout the overworld external
 to Minigames.  They are divided by source.
 
+\subsection{Bank Space}
+
+While not technically a microgame, the bank is an important aspect of the game.
+When passed, a player must give the bank five (5) coins.  When landed on,
+the player gains the number of coins currently kept in the bank.  The assumption
+being that the player robs the bank.
+
 \subsection{Board Event}
 
 None so far. These are triggered during movement and affect the board.
 
-\subsection{Bowser Time}
+\subsection{Bowser Time (2 spaces + 5 cards)}
 
 Bowser Time is initiated when a player lands on a Bowser Space.  The player
 is confronted with the big baddy himself and is subjected to a wheel of
@@ -318,6 +517,9 @@ redistributes the wealth evenly.
 poison or the reverse mushroom.
 
 \item[The Pipes] All player positions are shuffled and redistributed.
+
+\item[Zat Zis Unfortunaz] Add a Ztar hidden as a Star to the board and shuffle the
+two Star spaces.
 \end{description}
 
 \subsubsection{Bowser Chance Time}
@@ -335,7 +537,7 @@ twenty (20) coins from the player if they lose.
 \noindent
 No games have been defined so far.
 
-\subsection{Chance Time}
+\subsection{Chance Time (1 space + 2 cards)}
 
 Chance Time allows a player to steal coins or stars from another player but can also
 provide the opposite.
@@ -367,7 +569,7 @@ Possible transfer actions (weights have yet to be determined):
 \item[Swap All] Swap both coins and stars with the target.
 \end{description}
 
-\subsection{Duel Time}
+\subsection{Duel Time (1 space + 2 cards)}
 
 Duel Time allows a player to bet with another player that they can win.
 Each player is deducted some amount of coins (drawn from a deck / die roll).
@@ -431,18 +633,24 @@ Only one winner.  The winner takes the ten (10) coins.
 \section{Required Materials}
 
 Materials needed for the game.  The goal is to cut the costs as much as possible.
+The entries marked with Blizzy the Snowperson \textbf{(*\_*)} have already been obtained.
 
 \begin{description}[style=nextline]
-\item[Board Spaces] Poster board and spray paint?
+\item[(*\_*) Board Spaces] Using colored cones meant for setting up field boundaries in
+soccer or gym class or whatever.  They only come in five (5) colors so additions to the
+spaces will have to be made to differntiate all of the different types.  There is a hole
+on the top of each which might be usable to hold some other form of identifying info.
 
 \item[Coins] A couple decks of cards are cheap and easily made.
 Probably have 1, 3, 5, 10, 20, 50 as values.
 
-\item[Stars] Not sure yet, giving out cards for these just feels wrong. Might be able to find
-some decently cheap pewter/zinc stars or I can pull the sheriff badges off the rest of the
-cowboy hats that are currently sitting in my room.
+\item[(*\_*) Dice] I got three large demonstration-sized foam D10s.
 
 \item[Items] These will be cards with descriptions on them.
+
+\item[Item Designators] Somehow we need to mark on the board what type the item
+occupying it is and who owns it.  Currently I'm thinking the card used goes on the
+space (somehow) face-down so only the type is known along with a player designator.
 
 \item[Minigames] Also cards! Shuffle and draw instead of making a giant-ass wheel.
 
@@ -453,9 +661,8 @@ chance rolls since they're so cheap.  Like \$1.66 per 18 cards (\$5 for a deck o
 but maybe colored bandannas?  Everyone has to wear their color and then a pair is placed on the space when
 moving off of it (minigames/events).
 
-\item[Dice] It's really hard to find big dice.  I've got some larger-than-normal foam dice but massive
-dice don't exist outside of d6, so I think little dice will be needed here... The other option is switching
-to cards instead of the dice also.  Figuring out the distributions is not difficult.  Simple probabilities.
+\item[(*\_*) Stars] Using a bunch of plastic star-coins.
+
 \end{description}
 
 \section{What's Next}
@@ -464,8 +671,8 @@ The following is a list of things that are necessary before the plan can be put 
 
 \begin{itemize}
 \item Finalize minigame lists (bowser, duel, 1-vs-all, free-for-all, team)
-\item Determine max players (10? 12?)
-\item Determine turn count (15 or less depending on players and how much time being taken?)
+\item Determine max players (Groups of 4, can probs run more than one at once.)
+\item Determine turn count (10-15 or less depending on players and how much time being taken?)
 \item Design a map
 \item Make card artwork
 \item Pick an exact date
