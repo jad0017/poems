@@ -16,13 +16,7 @@ sub new { bless {
 }}
 
 my $fixcaps_word_re =
-	qr/^ (?:GNU)
-	   | (?:VCS)
-	   | (?:GC)
-	   | (?:C(?:\+\+)?)
-	   | (?:STL)
-	   | (?:I)
-	$/xo;
+	qr/^ (?:I) $/xo;
 
 my $fixcaps = sub {
 	# $_[0] => word
@@ -35,8 +29,8 @@ my $fixcaps = sub {
 	return $lc
 		if ( $_[0] !~ m/[a-z]/o );
 
-	return ucfirst( $lc )
-		if ( $_[0] =~ m/^[A-Z]/o );
+#	return ucfirst( $lc )
+#		if ( $_[0] =~ m/^[A-Z]/o );
 
 	$lc;
 };
