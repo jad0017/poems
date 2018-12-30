@@ -96,14 +96,34 @@ sub build_mapping {
 		my $total = 0.0;
 		$total += $_ for ( values %{ $followset } );
 
-		$mapping->{ $first } = { };
+		$mapping->{ $first } = { }
+			unless ( exists $mapping->{ $first } );
 
 		my ($k, $v);
 		while ( ($k, $v) = each %{ $followset } ) {
-			$mapping->{ $first }->{ $k } = $v / $total;
+			$mapping->{ $first }->{ $k } = $v;
 		}
 	}
 }
+
+sub finish_mapping {
+	my $self = shift;
+	my $mapping = $self->{ mapping };
+
+	for my $start ( keys %{ $mapping } ) {
+		my $total = 0.0;
+		my $mstart = $mapping->{ $start };
+
+		for my $count ( values %{ $mstart } ) {
+			$total += $count;
+		}
+
+		for my $key ( keys %{ $mstart } ) {
+			$mstart->{ $key } /= $total;
+		}
+	}
+}
+
 
 sub next {
 	my $self = shift;

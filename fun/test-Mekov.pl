@@ -13,9 +13,9 @@ die "usage: $0 <filename...>\n"
 
 my $m = new Mekov;
 
-for my $file ( @ARGV ) {
-	$m->init($file);
-}
+$m->init_array( @ARGV );
+$m->finish_mapping;
+
 
 for my $x ( 0 .. 20 ) {
 	my $line = $m->genSentence(10);
