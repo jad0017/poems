@@ -14,7 +14,7 @@ die "usage: $0 <filename...>\n"
 my $m = new HekuC;
 
 $m->init_array( @ARGV );
-my @a = split(m|\s*/\s*|, $m->GenHaiku((1 .. 20)));
+my @a = split(m|\s*/\s*|, $m->GenHaiku((1 .. 30)));
 for my $i ( 0 .. $#a ) {
 	print q(    ), $a[ $i ], qq(\n);
 }
